@@ -68,7 +68,7 @@ router.get('/:id', (req, res, next) => {
      * ADD CODE HERE *
      *****************/
     let id = req.params.id;
- books.findById(id, (err, book) => {
+ book.findById(id, (err, book) => {
 
     if (err) {
       console.error(err);
@@ -99,7 +99,7 @@ router.post('/:id', (req, res, next) => {
     "Genre": req.body.genre
   });
 
-  books.update({ _id: id}, books, (err) => {
+  book.update({ _id: id}, books, (err) => {
     if(err) {
       console.log(err);
       res.end(error);
