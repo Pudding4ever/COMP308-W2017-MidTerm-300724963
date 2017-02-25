@@ -56,7 +56,7 @@ router.post('/add', (req, res, next) => {
         console.log(err);
         res.end(err);
       } else {
-        res.redirect('books/index');
+        res.redirect('books');
       }
     });
 });
@@ -83,6 +83,7 @@ router.get('/:id', (req, res, next) => {
     }
   });
 });
+
 // POST - process the information passed from the details form and update the document
 router.post('/:id', (req, res, next) => {
 
