@@ -90,6 +90,24 @@ router.post('/:id', (req, res, next) => {
     /*****************
      * ADD CODE HERE *
      *****************/
+  let id = req.params.id;
+  let books = new book({
+    "_id": id,
+    "Title": req.body.title,
+    "Price": req.body.price,
+    "Author": req.body.author,
+    "Genre": req.body.genre
+  });
+
+  books.update({ _id: id}, books, (err) => {
+    if(err) {
+      console.log(err);
+      res.end(error);
+    }
+    else {
+      res.redirect('/books');
+    }
+  });
 
 });
 
@@ -99,6 +117,18 @@ router.get('/delete/:id', (req, res, next) => {
     /*****************
      * ADD CODE HERE *
      *****************/
+  let id = req.params.id;
+
+  books.remove({_id: id}, (err) => {
+    if(err) {
+      console.log(err);
+      res.end(err);
+    }
+    else {
+      res.redirect('/books');
+    }
+  });
+
 });
 
 
