@@ -68,7 +68,7 @@ router.get('/:id', (req, res, next) => {
      * ADD CODE HERE *
      *****************/
     let id = req.params.id;
- game.findById(id, (err, book) => {
+ books.findById(id, (err, book) => {
 
     if (err) {
       console.error(err);
@@ -119,7 +119,7 @@ router.get('/delete/:id', (req, res, next) => {
      *****************/
   let id = req.params.id;
 
-  books.remove({_id: id}, (err) => {
+  book.remove({_id: id}, (err) => {
     if(err) {
       console.log(err);
       res.end(err);
