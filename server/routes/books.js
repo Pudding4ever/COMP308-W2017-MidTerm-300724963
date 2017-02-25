@@ -42,7 +42,13 @@ router.get('/add', (req, res, next) => {
 
 // POST process the Book Details page and create a new Book - CREATE
 router.post('/add', (req, res, next) => {
+   book.find( (err, books) => {
+    if (err) {
+      return console.error(err);
+    }
+    else {
 books.insertOne({"Title":"test", "Description":"test", "Price": 6, "Author":"Dave", "Genre":"TEST"})
+    }
     /*****************
      * ADD CODE HERE *
      *****************/
