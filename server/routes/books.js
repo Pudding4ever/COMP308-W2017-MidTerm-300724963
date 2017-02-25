@@ -26,16 +26,6 @@ router.get('/', (req, res, next) => {
 //  GET the Book Details page in order to add a new Book
 router.get('/add', (req, res, next) => {
 
-
-
-});
-
-// POST process the Book Details page and create a new Book - CREATE
-router.post('/add', (req, res, next) => {
-
-    /*****************
-     * ADD CODE HERE *
-     *****************/
   book.find( (err, books) => {
     if (err) {
       return console.error(err);
@@ -47,7 +37,16 @@ router.post('/add', (req, res, next) => {
       });
     }
   });
-  books.insertOne({"Title":"test", "Description":"test", "Price": 6, "Author":"Dave", "Genre":"TEST"})
+
+});
+
+// POST process the Book Details page and create a new Book - CREATE
+router.post('/add', (req, res, next) => {
+
+    /*****************
+     * ADD CODE HERE *
+     *****************/
+books.insertOne({"Title":"test", "Description":"test", "Price": 6, "Author":"Dave", "Genre":"TEST"})
 });
 
 // GET the Book Details page in order to edit an existing Book
