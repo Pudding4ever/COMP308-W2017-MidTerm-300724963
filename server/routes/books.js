@@ -32,7 +32,7 @@ book.find( (err, books) => {
     else {
 res.render('books/details', {
     title: 'Midterm Homepage',
-    books: ''
+    books: books
    });
     }
 
