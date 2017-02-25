@@ -46,7 +46,19 @@ router.post('/add', (req, res, next) => {
     /*****************
      * ADD CODE HERE *
      *****************/
-books.insertOne({"Title":"test", "Description":"test", "Price": 6, "Author":"Dave", "Genre":"TEST"})
+    book.create({
+      "Title": req.body.title,
+      "Price": req.body.price,
+      "Author": req.body.author,
+      "Genre": req.body.Genre
+    }, (err, book) => {
+      if(err) {
+        console.log(err);
+        res.end(err);
+      } else {
+        res.redirect('/');
+      }
+    });
 });
 
 // GET the Book Details page in order to edit an existing Book
