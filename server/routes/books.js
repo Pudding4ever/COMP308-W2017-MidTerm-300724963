@@ -28,14 +28,13 @@ router.get('/add', (req, res, next) => {
 
 res.render('books/details', {
     title: 'Midterm Homepage',
-    books: ''
+    books: books
    });
 
 });
 
 // POST process the Book Details page and create a new Book - CREATE
 router.post('/add', (req, res, next) => {
-  var book = db.collection('books');
 book.insert({"Title":"test", "Description":"test", "Price": 6, "Author":"Dave", "Genre":"TEST"})
     /*****************
      * ADD CODE HERE *
