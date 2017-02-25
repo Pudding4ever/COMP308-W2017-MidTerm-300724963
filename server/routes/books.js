@@ -15,7 +15,7 @@ router.get('/', (req, res, next) => {
     }
     else {
       res.render('books/index', {
-        title: 'Book Details',
+        title: 'Book List',
         books: books
       });
     }
@@ -27,7 +27,7 @@ router.get('/', (req, res, next) => {
 router.get('/add', (req, res, next) => {
 
 res.render('books/details', {
-    title: 'Midterm Homepage',
+    title: 'Book Details',
     books: ''
    });
 
