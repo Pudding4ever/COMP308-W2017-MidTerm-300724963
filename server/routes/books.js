@@ -31,8 +31,8 @@ router.get('/add', (req, res, next) => {
       return console.error(err);
     }
     else {
-      res.render('books/index', {
-        title: 'Add/Edit Book Details',
+      res.render('books/details', {
+        title: 'Book Details',
         books: books
       });
     }
