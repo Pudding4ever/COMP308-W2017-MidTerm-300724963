@@ -28,7 +28,6 @@ router.get('/add', (req, res, next) => {
 
 res.render('books/details', {
     title: 'Midterm Homepage',
-    books: books
    });
 
 });
