@@ -50,13 +50,13 @@ router.post('/add', (req, res, next) => {
       "Title": req.body.title,
       "Price": req.body.price,
       "Author": req.body.author,
-      "Genre": req.body.Genre
+      "Genre": req.body.genre
     }, (err, book) => {
       if(err) {
         console.log(err);
         res.end(err);
       } else {
-        res.redirect('/');
+        res.redirect('books/index');
       }
     });
 });
@@ -67,8 +67,22 @@ router.get('/:id', (req, res, next) => {
     /*****************
      * ADD CODE HERE *
      *****************/
-});
+    let id = req.params.id;
+ game.findById(id, (err, book) => {
 
+    if (err) {
+      console.error(err);
+      res.end(error);
+    }
+    else {
+      // show edit
+      res.render('books/details', {
+        title: 'Book Details',
+        books: books
+      });
+    }
+  });
+});
 // POST - process the information passed from the details form and update the document
 router.post('/:id', (req, res, next) => {
 
