@@ -68,8 +68,7 @@ router.get('/:id', (req, res, next) => {
      * ADD CODE HERE *
      *****************/
     let id = req.params.id;
- book.findById(id, (err, book) => {
-
+ book.findById(id, (err, books) => {
     if (err) {
       console.error(err);
       res.end(error);
